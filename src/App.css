@@ -1,38 +1,103 @@
 .App {
-  text-align: center;
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.clock-box {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  cursor: pointer;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.box {
+  display: flex;
+  width: 10%;
+  height: 195px;
+  /* margin: 0px 60px; */
+}
+#top,
+#bottom,
+#topleft,
+#topright,
+#bottomleft,
+#bottomright,
+#mid {
+  margin: auto;
+  width: 75px;
+  height: 10px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  position: absolute;
+}
+#mid {
+  border-radius: 30px;
+  margin-top: 90px;
+}
+#bottom {
+  transform: rotate(180deg);
+  margin-top: 179px;
+}
+#topleft,
+#topright {
+  margin-top: 45px;
+}
+#bottomleft,
+#bottomright {
+  margin-top: 135px;
+}
+#topleft,
+#bottomleft {
+  transform: rotate(270deg);
+  margin-left: -35px;
+}
+#topright,
+#bottomright {
+  transform: rotate(90deg);
+  margin-left: 35px;
+}
+span {
+  font-size: 2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-style: normal;
+  color: rgba(0, 0, 0, 1);
+  transform: scale(2.5, 4);
+}
+.Green {
+  background-color: rgba(0, 0, 0, 1);
+}
+.Black {
+  background-color: rgba(255, 255, 255, 1);
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+  scale: 1.1;
+  margin: 30px 0px;
+}
+nav a{
+  text-decoration: none;
+  color: black;
+  letter-spacing: 3px;
+}
+.timer{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
 }
-
-.App-link {
-  color: #61dafb;
+.inputTimer{
+  margin: 100px auto;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+label{
+  margin: auto 30px;
+  padding: 20px;
+}
+.sp{
+  font-size: 1rem;
 }
