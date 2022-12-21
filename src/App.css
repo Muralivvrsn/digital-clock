@@ -3,16 +3,24 @@
   position: relative;
   flex-flow: column;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
 }
+ 
 .clock-box {
   width: 90%;
   display: flex;
   justify-content: space-between;
   margin: auto;
+  height: 100%;
 }
 button {
   cursor: pointer;
+  border-radius: 10px;
+  width: 90px;
+  height: 30px;
+  padding:0px 10px;
+  font-size: 16px;
+  text-align: center;
 }
 .box {
   display: flex;
@@ -65,14 +73,14 @@ span {
   margin-top: auto;
   margin-bottom: auto;
   font-style: normal;
-  color: rgba(0, 0, 0, 1);
+  color: rgb(255, 255, 255);
   transform: scale(2.5, 4);
 }
 .Green {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgb(255, 255, 255);
 }
 .Black {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgb(17, 17, 17);
 }
 nav {
   display: flex;
@@ -80,10 +88,11 @@ nav {
   gap: 50px;
   scale: 1.1;
   margin: 30px 0px;
+  margin-left: 50px;
 }
 nav a{
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
   letter-spacing: 3px;
 }
 .timer{
@@ -92,12 +101,44 @@ nav a{
   width: 100%;
 }
 .inputTimer{
-  margin: 100px auto;
+  width: 100%;
+  margin: 20px auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+input{
+  width: 100px;
 }
 label{
-  margin: auto 30px;
-  padding: 20px;
+  margin: auto;
 }
 .sp{
   font-size: 1rem;
+}
+.buttons{
+  width: fit-content;
+  height: fit-content;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+}
+#start-btn{
+  background-color: green;
+}
+#stop-btn{
+  background-color: red;
+}
+#reset-btn{
+  background-color: orange;
+}
+#set-btn{
+  background-color: skyblue;
+  margin: auto;
+}
+.Timings{
+  width: 100%;
+  margin: auto;
 }

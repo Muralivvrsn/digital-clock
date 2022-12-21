@@ -17,24 +17,62 @@ export function fourBits(number) {
 }
 export function reducer(state,action){
     switch(action.type){
-        case "hour": return {...state, hour:action.event.target.value};
-        case "minute": return {...state, minute:action.event.target.value};
-        case "second" : return {...state, second: action.event.target.value};
+        case "hour": return {...state, hour:`${(action.event.target.value<10?'0' + action.event.target.value:action.event.target.value)}`};
+        case "minute": return {...state, minute:`${(action.event.target.value<10?'0' + action.event.target.value:action.event.target.value)}`};
+        case "second" : return {...state, second: `${(action.event.target.value<10?'0' + action.event.target.value:action.event.target.value)}`};
+        case "isTrue" : return {...state, isTrue:(state.isTrue?false:true)}
         default:
           return state;
       }
 }
 export function reduceTime(time){
-    let ctime = time;
-    if(time!=="00:00:00"){
-        let second = parseInt(time[6] + time[7]);
-        let minute = parseInt(time[3] + time[4]);
-        let hour = parseInt(time[0]+time[1]);
-        if(second == 0){
-            if(hour!=0 && minute!=0){
-                if(minute==0)
+    let second = parseInt(time[6]+time[7]);
+    let minute = parseInt(time[3]+time[4]);
+    let hour = parseInt(time[0]+time[1]);
+    if(second==0){
+        if(minute==0){
+            if(hour==0){
+                time = "00:00:00";
+            }
+            else{
+                if(hour<=10){
+                    time = `0${hour-1}:${59}:${59}`;
+                }
+                else{
+                    time = `${hour-1}:${59}:${59}`;
+                }
             }
         }
-
+        else{
+            if(hour==0){
+                if(minute<=10)
+                    time = `00:0${minute-1}:59`;
+                else
+                    time = `00:${minute-1}:59`;
+            }
+            else{
+                if(hour<10){
+                    if(minute<=10)
+                        time = `0${hour}:0${minute-1}:59`;
+                    else
+                        time = `0${hour}:${minute-1}:59`;
+                }
+                else{
+                    if(minute<=10)
+                        time = `${hour}:0${minute-1}:59`;
+                    else
+                        time = `${hour}:${minute-1}:59`;
+                }
+            }
+        }
     }
+    else{
+        if(second<=10){
+            time = `${(hour<10?'0'+hour:hour)}:${(minute<10?'0'+minute:minute)}:0${second-1}`;
+        }
+        else{
+            time = `${(hour<10?'0'+hour:hour)}:${(minute<10?'0'+minute:minute)}:${second-1}`;
+        }
+    }
+    return time;  
 }
