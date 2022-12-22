@@ -76,3 +76,81 @@ export function reduceTime(time){
     }
     return time;  
 }
+
+export function setTime(time){
+    let second = parseInt(time[6]+time[7]);
+    let minute = parseInt(time[3]+time[4]);
+    let hour = parseInt(time[0]+time[1]);
+    if(second==59){
+        if(minute==59){
+            if(hour==23){
+                time='00:00:00';
+            }
+            else{
+                if(hour<9){
+                    time = `0${hour+1}:00:00`;
+                }
+                else{
+                    time = `${hour+1}:00:00`;
+                }
+            }
+        }
+        else{
+            if(minute<9){
+                if(hour<9){
+                    time = `0${hour}:0${minute}:00`;
+                }
+                else{
+                    time = `${hour}:0${minute}:00`;
+                }
+            }
+            else{
+                if(hour<9){
+                    time = `0${hour}:${minute}:00`;
+                }
+                else{
+                    time = `${hour}:${minute}:00`;
+                }
+            }
+        }
+    }
+    else{
+        if(second<9){
+            if(minute<9){
+                if(hour<9){
+                    time = `0${hour}:0${minute}:0${second+1}`;
+                }
+                else{
+                    time = `${hour}:0${minute}:0${second+1}`;
+                }
+            }
+            else{
+                if(hour<9){
+                    time = `0${hour}:${minute}:0${second+1}`;
+                }
+                else{
+                    time = `${hour}:${minute}:0${second+1}`;
+                }
+            }
+        }
+        else{
+            if(minute<9){
+                if(hour<9){
+                    time = `0${hour}:0${minute}:${second+1}`;
+                }
+                else{
+                    time = `${hour}:0${minute}:${second+1}`;
+                }
+            }
+            else{
+                if(hour<9){
+                    time = `0${hour}:${minute}:${second+1}`;
+                }
+                else{
+                    time = `${hour}:${minute}:${second+1}`;
+                }
+            }
+        }
+    }
+    return time;
+}

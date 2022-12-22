@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
+import { setTime } from './Function';
 import Home from './Home';
 const Stopwatch = () => {
-    const [time, setTime] = useState("00:00:00");
+    const [time, setTimer] = useState("00:00:00");
+    const [started, setStarted] = useState(false);
+    useEffect(()=>{
+      if(started)
+      setTimeout(()=>{
+        setTimer(setTime(time));
+      },1000);
+    },[time]);
     console.log(time)
   return (
     <div className='timer'>
@@ -10,9 +18,9 @@ const Stopwatch = () => {
           <Home clockTime = {time}/>
         </div>
         <div className="buttons">
-            <button id='start-btn'>Start</button>
-            <button id='stop-btn'>Stop</button>
-            <button id='reset-btn'>Reset</button>
+            <button id='start-btn' onClick={()=>{setTimer(setTime(time));setStarted(true)}}>Start</button>
+            <button id='stop-btn' onClick={()=>{setStarted(false)}}>Stop</button>
+            <button id='reset-btn' onClick={()=>{setTimer("00:00:00");setStarted(false)}}>Reset</button>
         </div>
     </div>
   )
