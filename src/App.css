@@ -23,6 +23,7 @@ button {
   text-align: center;
 }
 .box {
+  margin-top: auto;
   display: flex;
   width: 10%;
   height: 195px;
@@ -36,7 +37,7 @@ button {
 #bottomright,
 #mid {
   margin: auto;
-  width: 75px;
+  width: 10%;
   height: 10px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
@@ -44,29 +45,29 @@ button {
 }
 #mid {
   border-radius: 30px;
-  margin-top: 90px;
+  margin-top: 12%;
 }
 #bottom {
   transform: rotate(180deg);
-  margin-top: 179px;
+  margin-top: 24%;
 }
 #topleft,
 #topright {
-  margin-top: 45px;
+  margin-top: 6%;
 }
 #bottomleft,
 #bottomright {
-  margin-top: 135px;
+  margin-top: 18%;
 }
 #topleft,
 #bottomleft {
   transform: rotate(270deg);
-  margin-left: -35px;
+  margin-left: -5%;
 }
 #topright,
 #bottomright {
   transform: rotate(90deg);
-  margin-left: 35px;
+  margin-left: 5%;
 }
 span {
   font-size: 2rem;
@@ -76,12 +77,16 @@ span {
   color: rgb(255, 255, 255);
   transform: scale(2.5, 4);
 }
-.Green {
+.White {
   background-color: rgb(255, 255, 255);
 }
 .Black {
   background-color: rgb(17, 17, 17);
 }
+.Red{
+  background-color: red;
+}
+
 nav {
   display: flex;
   justify-content: space-around;
@@ -141,4 +146,22 @@ label{
 .Timings{
   width: 100%;
   margin: auto;
+}
+button:hover{
+  scale: 1.1;
+  transition: all 0.2s;
+}
+a{
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  text-align: center;
+  padding: 2px 10px;
+}
+
+a:hover{
+  background-color: whitesmoke;
+  color: black;
+  scale: 1.1;
+  transition: all 0.2s;
 }

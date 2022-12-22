@@ -20,7 +20,7 @@ const Clock = () => {
       };
       setInterval(update, 1000);
   return (
-       <Home clockTime={time}/>
+       <Home clockTime={time} displayColor = {'White'}/>
   )
 }
 

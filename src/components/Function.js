@@ -20,7 +20,7 @@ export function reducer(state,action){
         case "hour": return {...state, hour:`${(action.event.target.value<10?'0' + action.event.target.value:action.event.target.value)}`};
         case "minute": return {...state, minute:`${(action.event.target.value<10?'0' + action.event.target.value:action.event.target.value)}`};
         case "second" : return {...state, second: `${(action.event.target.value<10?'0' + action.event.target.value:action.event.target.value)}`};
-        case "isTrue" : return {...state, isTrue:(state.isTrue?false:true)}
+        case "isTrue" : return {...state, isTrue:action.event};
         default:
           return state;
       }

@@ -15,7 +15,7 @@ const Stopwatch = () => {
   return (
     <div className='timer'>
         <div className="Timings">
-          <Home clockTime = {time}/>
+          <Home clockTime = {time} displayColor = {'White'}/>
         </div>
         <div className="buttons">
             <button id='start-btn' onClick={()=>{setTimer(setTime(time));setStarted(true)}}>Start</button>
