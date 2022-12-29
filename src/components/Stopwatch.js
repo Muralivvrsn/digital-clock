@@ -6,10 +6,11 @@ const Stopwatch = () => {
     const [time, setTimer] = useState("00:00:00");
     const [started, setStarted] = useState(false);
     useEffect(()=>{
-      if(started)
-      setTimeout(()=>{
-        setTimer(setTime(time));
-      },1000);
+      if(started){
+        setTimeout(()=>{
+          setTimer(setTime(time));
+        },1000);
+      }
     },[time]);
     console.log(time)
   return (
