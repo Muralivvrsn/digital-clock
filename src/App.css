@@ -208,22 +208,18 @@ a:hover{
   }
 }
 .classInput{
-  width: 40%;
   height: 150px;
-  color: white;
+  color: rgb(255, 255, 255);
+  font-size: 8px;
   padding: auto;
   margin: auto;
-  top:150px;
-  left: 30%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
   border-radius: 10px;
 }
 .input{
   width: fit-content;
   height: fit-content;
-  padding: 20px;
-  margin: 15px auto auto auto;
-  backdrop-filter: blur(100px);
+  margin: auto;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -231,8 +227,40 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 .input > input{
+  border-radius: 5px;
+  border: none;
   width: 20px;
   height: 20px;
   text-align: center;
-  margin: 20px;
+  margin: 20px 2px 20px 20px;
+}
+#input-btn{
+  border-radius: 3px;
+  font-size: 10px;
+  padding: 5px 10px;
+  width: fit-content;
+  height: fit-content;
+  margin-left: 70px;
+  border: none;
+}
+#input-btn:focus{
+  border: none;
+}
+#input-btn:hover{
+  scale: 1.1;
+  background-color: black;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.display{
+  display: flex;
+}
+.noDisplay{
+  display: none;
+}
+.inputNoDisplay{
+  display: none;
+}
+.inputDisplay{
+  display: block;
 }

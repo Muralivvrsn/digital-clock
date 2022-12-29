@@ -15,6 +15,9 @@ export function fourBits(number) {
     return states;
     
 }
+/* Four bits functions returns which bar is to activate and which is not*/
+
+
 export function reducer(state,action){
     switch(action.type){
         case "hour": return {...state, hour:`${(action.event.target.value<10?'0' + action.event.target.value:action.event.target.value)}`};
@@ -76,7 +79,15 @@ export function reduceTime(time){
     }
     return time;  
 }
-
+export function getTime(hr,min,sec){
+    let time="";
+    time+=(hr<10?`0${hr}`:toString(hr));
+    time+=':';
+    time+=(min<10?`0${min}`:toString(min));
+    time+=':';
+    time+=(sec<10?`0${sec}`:toString(sec));
+    return time;
+}
 export function setTime(time){
     let second = parseInt(time[6]+time[7]);
     let minute = parseInt(time[3]+time[4]);
@@ -153,4 +164,14 @@ export function setTime(time){
         }
     }
     return time;
+}
+
+export function getCurrentTime(){
+    let currentTime = new Date().toLocaleTimeString("en-Us", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+      });
+    return currentTime;
 }
