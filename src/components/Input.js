@@ -1,4 +1,4 @@
-import { func } from 'prop-types';
+
 import React, { useEffect, useState, useRef } from 'react'
 
 const Input = (props) => {
@@ -11,6 +11,7 @@ const Input = (props) => {
       changeScreen(true)
     }, 1000);
   },[]);
+  //--------------------------------------------------------
   const useref1 = useRef(null);
   const useref2 = useRef(null);
   function changeFocus1(e){
@@ -21,11 +22,12 @@ const Input = (props) => {
     if(e.keyCode===13)
     useref1.current.focus();
   }
+  //--------------------------------------------------------
   const update = ()=>props.func([hr,min,sec,true]);
   return (
     <div className={(takeInput?"getAnimate":" ")+" classInput " + (props.display?' inputNoDisplay':' inputDisplay')}>
         <div className='input'>
-            <input type="number" min='0' max={24} onChange={(e)=>setHour(e.target.value)} autoFocus onKeyDown={(e)=>changeFocus(e)}/>
+            <input type="number" min={0} max={24} onChange={(e)=>setHour(e.target.value)} autoFocus onKeyDown={(e)=>changeFocus(e)}/>
             hr
             <input type="number" min={0} max={59}   onChange={(e)=>setMinute(e.target.value)} ref={useref1} onKeyDown={(e)=>changeFocus1(e)}/>
             min
