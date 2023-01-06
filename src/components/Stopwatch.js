@@ -21,7 +21,7 @@ const Stopwatch = () => {
         <div className="buttons">
             <button id='start-btn' onClick={()=>{setTimer(setTime(time));setStarted(true)}}>Start</button>
             <button id='stop-btn' onClick={()=>{setStarted(false)}}>Stop</button>
-            <button id='reset-btn' onClick={()=>{setTimer("00:00:00");setStarted(false)}}>Reset</button>
+            <button id='reset-btn' onClick={()=>{setTimer("00:00:00")}}>Reset</button>
         </div>
     </div>
   )

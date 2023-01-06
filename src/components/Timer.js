@@ -1,5 +1,5 @@
-import { isImportDefaultSpecifier } from '@babel/types'
-import React, {  useEffect, useReducer, useState } from 'react'
+// import { isImportDefaultSpecifier } from '@babel/types'
+import React, {  useEffect, useState } from 'react'
 import { reducer, reduceTime, getTime } from './Function'
 import Home from './Home'
 import Input from './Input'
@@ -14,8 +14,6 @@ const Timer = () => {
   function putData(data){
     ff(getTime(data[0],data[1],data[2]));
     showDisplay(data[3]);
-    console.log(data)
-    console.log(time)
   }
   return (
     <div className='timer'>

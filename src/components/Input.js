@@ -10,18 +10,9 @@ const Input = (props) => {
     setTimeout(() => {
       changeScreen(true)
     }, 1000);
-  },[]);
-  //--------------------------------------------------------
+  },[]);//--------------------------------------------------------
   const useref1 = useRef(null);
   const useref2 = useRef(null);
-  function changeFocus1(e){
-    if(e.keyCode === 13)
-    useref2.current.focus();
-  }
-  function changeFocus(e){
-    if(e.keyCode===13)
-    useref1.current.focus();
-  }
   //--------------------------------------------------------
   const update = ()=>props.func([hr,min,sec,true]);
   return (
@@ -37,6 +28,14 @@ const Input = (props) => {
         <button id='input-btn' onClick={update}>set</button>
     </div>
   )
+  function changeFocus1(e){
+    if(e.keyCode === 13)
+    useref2.current.focus();
+  }
+  function changeFocus(e){
+    if(e.keyCode===13)
+    useref1.current.focus();
+  }
 }
 
 export default Input
