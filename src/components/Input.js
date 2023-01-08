@@ -1,41 +1,29 @@
 
 import React, { useEffect, useState, useRef } from 'react'
-
+import { useSelector, useDispatch } from 'react-redux';
 const Input = (props) => {
-  const [takeInput, changeScreen] = useState(false);
-  const [hr, setHour] = useState(0);
-  const [min, setMinute] = useState(0);
-  const [sec, setSecond] = useState(0);
-  useEffect(()=>{
-    setTimeout(() => {
-      changeScreen(true)
-    }, 1000);
-  },[]);//--------------------------------------------------------
-  const useref1 = useRef(null);
-  const useref2 = useRef(null);
-  //--------------------------------------------------------
+  const hr = useSelector((state)=>state.hours);
+  const min = useSelector((state)=>state.minutes);
+  const sec = useSelector((state)=>state.seconds);
+  const INC = useSelector((state)=>state.INC);
+  console.log(hr,min,sec,INC)
+  const dispatch = useDispatch();
   const update = ()=>props.func([hr,min,sec,true]);
   return (
-    <div className={(takeInput?"getAnimate":" ")+" classInput " + (props.display?' inputNoDisplay':' inputDisplay')}>
+    <div className={(INC?"getAnimate":" ")+" classInput " + (props.display?' inputNoDisplay':' inputDisplay')}>
         <div className='input'>
-            <input type="number" min={0} max={24} onChange={(e)=>setHour(e.target.value)} autoFocus onKeyDown={(e)=>changeFocus(e)}/>
+            <form action="">
+            <input type="number" min={0} max={24} onChange={(e)=>dispatch({type:'hours',playload:e.value})} autoFocus/>
             hr
-            <input type="number" min={0} max={59}   onChange={(e)=>setMinute(e.target.value)} ref={useref1} onKeyDown={(e)=>changeFocus1(e)}/>
+            <input type="number" min={0} max={59}   onChange={(e)=>dispatch({type:'minutes',playload:e.value})}/>
             min
-            <input type="number" min={0} max={59}  onChange={(e)=>setSecond(e.target.value)} ref={useref2}/>
+            <input type="number" min={0} max={59}  onChange={(e)=>dispatch({type:'seconds',playload:e.value})}/>
             sec
+            </form>
         </div>
         <button id='input-btn' onClick={update}>set</button>
     </div>
   )
-  function changeFocus1(e){
-    if(e.keyCode === 13)
-    useref2.current.focus();
-  }
-  function changeFocus(e){
-    if(e.keyCode===13)
-    useref1.current.focus();
-  }
 }
 
 export default Input
