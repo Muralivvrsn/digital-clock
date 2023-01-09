@@ -17,18 +17,18 @@ const Timer = () => {
 
   // useEffect hooks
   useEffect(() => {
-    if (isDisplay) {
+    if (true && isDisplay) {
       localStorage.setItem(key, JSON.stringify([time,isDisplay]));
       setTimeout(() => {
         changeTime(reduceTime(time));
       }, 1000);
     }
-  }, [time]);
+  }, [time,isDisplay]);
   useEffect(() => {
       const prevData = JSON.parse(localStorage.getItem(key));
     changeTime(prevData[0]);
     showDisplay(prevData[1]);
-  }, []);
+  }, [time,isDisplay]);
   return (
     <div className="timer">
       <Input func={putData} display={isDisplay} />

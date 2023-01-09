@@ -11,7 +11,7 @@ const Stopwatch = () => {
           setTimer(setTime(time));
         },1000);
       }
-    },[time]);
+    },[time,started]);
   return (
     <div className='timer'>
         <div className="Timings">
