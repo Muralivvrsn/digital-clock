@@ -4,25 +4,36 @@ import { reduceTime, getTime } from "./Function";
 import Home from "./Home";
 import Input from "./Input";
 const Timer = () => {
-  const [time, ff] = useState("00:00:00");
+  const key = "TIME";
+  const [time, changeTime] = useState();
   const [isDisplay, showDisplay] = useState(false);
-  useEffect(() => {
-    if (isDisplay)
-      setTimeout(() => {
-        ff(reduceTime(time));
-      }, 1000);
-  }, [time]);
-  console.log(time);
+
+  // data from child
   const putData = (data) => {
-    ff(getTime(data[0], data[1], data[2]));
-    showDisplay(data[3]);
-    console.log(data)
+    console.log(data);
+    changeTime(getTime(data.hr, data.min, 0));
+    showDisplay(data.display);
   };
+
+  // useEffect hooks
+  useEffect(() => {
+    if (isDisplay) {
+      localStorage.setItem(key, JSON.stringify([time,isDisplay]));
+      setTimeout(() => {
+        changeTime(reduceTime(time));
+      }, 1000);
+    }
+  }, [time]);
+  useEffect(() => {
+      const prevData = JSON.parse(localStorage.getItem(key));
+    changeTime(prevData[0]);
+    showDisplay(prevData[1]);
+  }, []);
   return (
     <div className="timer">
       <Input func={putData} display={isDisplay} />
       <div className={isDisplay ? "display" : "noDisplay"}>
-        <Home clockTime={time} displayColor={"White"} />
+        <Home clockTime={isDisplay?time:"00:00:00"} displayColor={"White"} />
       </div>
     </div>
   );

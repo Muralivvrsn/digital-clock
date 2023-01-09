@@ -124,23 +124,19 @@ label{
 .buttons{
   width: fit-content;
   height: fit-content;
-  margin: 30px auto;
+  margin-left: 20px;
   display: flex;
   justify-content: space-around;
   gap: 50px;
 }
 #start-btn{
-  background-color: green;
+  background-color: rgb(255, 255, 255);
 }
 #stop-btn{
-  background-color: red;
+  background-color: rgb(255, 255, 255);
 }
 #reset-btn{
-  background-color: orange;
-}
-#set-btn{
-  background-color: skyblue;
-  margin: auto;
+  background-color: rgb(255, 255, 255);
 }
 .Timings{
   width: 100%;
@@ -251,8 +247,8 @@ input:focus{
 }
 #input-btn:hover{
   scale: 1.1;
-  background-color: black;
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   transition: all 0.3s ease-in-out;
 }
 .display{
@@ -266,4 +262,10 @@ input:focus{
 }
 .inputDisplay{
   display: block;
+}
+
+form > input{
+  width: 20px;
+  height: 20px;
+  margin: 10px;
 }

@@ -5,7 +5,6 @@ import React from "react";
 import Clock from './components/Clock';
 import Timer from './components/Timer';
 import Stopwatch from './components/Stopwatch';
-// import { useState } from "react";
 
 const App = () => {
   return (

@@ -12,16 +12,15 @@ const Stopwatch = () => {
         },1000);
       }
     },[time]);
-    console.log(time)
   return (
     <div className='timer'>
         <div className="Timings">
           <Home clockTime = {time} displayColor = {'White'}/>
         </div>
         <div className="buttons">
-            <button id='start-btn' onClick={()=>{setTimer(setTime(time));setStarted(true)}}>Start</button>
-            <button id='stop-btn' onClick={()=>{setStarted(false)}}>Stop</button>
-            <button id='reset-btn' onClick={()=>{setTimer("00:00:00")}}>Reset</button>
+            <button id='start-btn'  onClick={()=>{setTimer(setTime(time));setStarted(true)}}>Start</button>
+            <button id='stop-btn'  onClick={()=>{setStarted(false)}}>Stop</button>
+            <button id='reset-btn'  onClick={()=>{setStarted(false);setTimer("00:00:00")}}>Reset</button>
         </div>
     </div>
   )

@@ -2,9 +2,12 @@
 import React, {useState} from 'react'
 const Input = (props) => {
   const [Data , getData] = useState({hr:0,min:0,display:false});
-  const update = ()=>props.func(Data);
+  const update = (e)=>{
+    props.func({...Data, display:true});
+    e.preventDefault();
+  };
   return (
-    <div className={(INC?"getAnimate":" ")+" classInput " + (props.display?' inputNoDisplay':' inputDisplay')}>
+    <div className={" classInput " + (props.display?' inputNoDisplay':' inputDisplay')}>
         <div className='input'>
             <form action="" onSubmit={update}>
             <input type="number" min={0} max={24} onChange={(e)=>getData({...Data, hr:e.target.value})} autoFocus/>
