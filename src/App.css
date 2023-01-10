@@ -1,13 +1,13 @@
-.App{
+.App {
   width: 100%;
   height: 600px;
 }
-.navBar{
+.navBar {
   margin: 10px auto 20px auto;
   width: 80%;
   height: 20%;
 }
-.navBar > nav{
+.navBar > nav {
   margin: auto;
   display: flex;
   width: 70%;
@@ -15,21 +15,21 @@
   gap: 200px;
   justify-content: space-around;
 }
-.navBar > nav > a{
+.navBar > nav > a {
   text-decoration: none;
   color: rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
   width: 150px;
   height: 30%;
   text-align: center;
-  padding:10px;
+  padding: 10px;
   letter-spacing: 2px;
   font-size: 1.5rem;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin: auto;
 }
 
-.clockBody{
+.clockBody {
   margin: auto;
   width: 90%;
   height: 80%;
@@ -49,7 +49,7 @@
 }
 .stick {
   width: 10%;
-  height: 2.3%;
+  height: 15px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   position: absolute;
@@ -80,17 +80,16 @@
   transform: rotate(90deg);
   margin-left: 5%;
 }
-.colon{
+.colon {
   width: 5%;
   height: 100%;
   color: green;
   text-align: center;
 }
-.colon > p{
+.colon > p {
   position: absolute;
-  margin-top: 10%;
-  margin-left: 1.5%;
-  transform: scale(10,10);
+  margin-top: 3%;
+  font-size: 9rem;
 }
 .White {
   background-color: rgb(17, 255, 0);
@@ -98,18 +97,18 @@
 .Black {
   background-color: rgba(2, 39, 2, 0.5);
 }
-.Red{
+.Red {
   background-color: rgb(255, 0, 0);
 }
 
-.classInput{
+.classInput {
   width: 80%;
   height: 80%;
   display: flex;
   margin: auto;
   justify-content: space-around;
 }
-.input{
+.input {
   height: 45%;
   margin-top: 20%;
 }
@@ -120,16 +119,16 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="range"] {
   -moz-appearance: textfield;
 }
-form > input{
+form > input {
   width: 50px;
   height: 50px;
   border-radius: 5px;
   font-size: 1.5rem;
 }
-form > button:hover{
+form > button:hover {
   transform: scale(1.1);
   transition: all 0.2s ease;
 }
@@ -142,40 +141,119 @@ form > button {
   border-radius: 5px;
 }
 
-.noDisplay{
+.noDisplay {
   display: none;
 }
-.display{
+.display {
   display: flex;
 }
-.stopWatchDivision{
+.stopWatchDivision {
   width: 100%;
   height: 100%;
 }
-.home{
+.home {
   height: 85%;
 }
-.buttons{
+.buttons {
   margin: 20px auto auto auto;
-  height:15%;
+  height: 15%;
   display: flex;
   width: 100%;
   justify-content: space-around;
 }
-.buttons > button{
+.buttons > button {
   width: 80px;
   height: 50px;
   font-size: 1.3rem;
   border-radius: 5px;
   cursor: pointer;
 }
-.buttons > button:hover{
+.buttons > button:hover {
   transform: scale(1.1);
   transition: all 0.2s ease;
 }
-.bottomLine{
+.bottomLine {
   border-bottom: 2px solid rgb(255, 255, 255);
   border-radius: 0px;
 }
-
-
+@media screen and (max-width: 1200px) {
+  .stick {
+    height: 15px;
+  }
+  .colon > p{
+    font-size: 9rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .stick {
+    height: 10px;
+  }
+  .colon > p{
+    font-size: 6rem;
+  }
+}
+@media screen and (max-width: 769px) {
+  .stick {
+    height: 6px;
+  }
+  .colon > p{
+    font-size: 4rem;
+  }
+  .navBar > nav > a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    width: 50px;
+    height: 25%;
+    text-align: center;
+    padding: 5px;
+    letter-spacing: 1.5px;
+    font-size: 1.2rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin: auto;
+  }
+  .navBar {
+    margin: 10px auto 20px auto;
+    width: 80%;
+    height: 20%;
+    border: 2px solid blue;
+  }
+  .navBar > nav {
+    margin: auto;
+    display: flex;
+    width: 60%;
+    height: 90%;
+    gap: 100px;
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 481px) {
+  .stick {
+    height: 5px;
+  }
+  .colon > p{
+    font-size: 3.3rem;
+  }
+  .navBar > nav > a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    width: 100px;
+    height: 30%;
+    text-align: center;
+    padding: 1px;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin: auto;
+  }
+  .navBar > nav {
+    margin: auto;
+    display: flex;
+    width: 60%;
+    height: 90%;
+    gap: 50px;
+    justify-content: space-around;
+  }
+  
+}
