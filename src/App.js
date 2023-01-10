@@ -9,12 +9,16 @@ import Stopwatch from './components/Stopwatch';
 const App = () => {
   return (
     <div className="App">
-      <Navbar />
-      <Routes>
-        <Route path="/" exact element={<Clock />}></Route>
-        <Route path="/timer" exact element={<Timer />}></Route>
-        <Route path="/stopwatch" exact element={<Stopwatch />}></Route>
-      </Routes>
+      <div className="navBar">
+        <Navbar />
+      </div>
+      <div className="clockBody">
+        <Routes>
+          <Route path="/" exact element={<Clock />}></Route>
+          <Route path="/timer" exact element={<Timer />}></Route>
+          <Route path="/stopwatch" exact element={<Stopwatch />}></Route>
+        </Routes>
+      </div>
     </div>
   );
 };

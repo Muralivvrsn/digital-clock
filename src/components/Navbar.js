@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 function Navbar() {
   return (
     <nav>
-        <Link to="/">Clock</Link>
-        <Link to="/timer">Timer</Link>
-        <Link to="/stopwatch">Stopwatch</Link>
+        <NavLink to="/" className={({isActive}) => isActive?'bottomLine':''}  >Clock</NavLink>
+        <NavLink to="/timer" className={({isActive}) => isActive?'bottomLine':''} >Timer</NavLink>
+        <NavLink to="/stopwatch"className={({isActive}) => isActive?'bottomLine':''}>Stopwatch</NavLink>
     </nav>
   )
 }

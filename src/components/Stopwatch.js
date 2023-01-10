@@ -13,9 +13,9 @@ const Stopwatch = () => {
       }
     },[time,started]);
   return (
-    <div className='timer'>
-        <div className="Timings">
-          <Home clockTime = {time} displayColor = {'White'}/>
+    <div className='stopWatchDivision'>
+        <div className="home">
+            <Home clockTime = {time} displayColor = {'White'}/>
         </div>
         <div className="buttons">
             <button id='start-btn'  onClick={()=>{setTimer(setTime(time));setStarted(true)}}>Start</button>

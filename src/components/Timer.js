@@ -10,7 +10,6 @@ const Timer = () => {
 
   // data from child
   const putData = (data) => {
-    console.log(data);
     changeTime(getTime(data.hr, data.min, 0));
     showDisplay(data.display);
   };
@@ -18,22 +17,27 @@ const Timer = () => {
   // useEffect hooks
   useEffect(() => {
     if (true && isDisplay) {
-      localStorage.setItem(key, JSON.stringify([time,isDisplay]));
+      localStorage.setItem(key, JSON.stringify([time, isDisplay]));
       setTimeout(() => {
         changeTime(reduceTime(time));
       }, 1000);
     }
-  }, [time,isDisplay]);
+  }, [time, isDisplay]);
   useEffect(() => {
+    if (isDisplay) {
       const prevData = JSON.parse(localStorage.getItem(key));
-    changeTime(prevData[0]);
-    showDisplay(prevData[1]);
-  }, [time,isDisplay]);
+      changeTime(prevData[0]);
+      showDisplay(prevData[1]);
+    }
+  }, [time, isDisplay]);
   return (
-    <div className="timer">
+    <div className="TimerDivision">
       <Input func={putData} display={isDisplay} />
       <div className={isDisplay ? "display" : "noDisplay"}>
-        <Home clockTime={isDisplay?time:"00:00:00"} displayColor={"White"} />
+        <Home
+          clockTime={isDisplay ? time : "00:00:00"}
+          displayColor={"White"}
+        />
       </div>
     </div>
   );

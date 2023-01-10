@@ -1,38 +1,55 @@
-.App {
+.App{
+  width: 100%;
+  height: 600px;
+}
+.navBar{
+  margin: 10px auto 20px auto;
+  width: 80%;
+  height: 20%;
+}
+.navBar > nav{
+  margin: auto;
   display: flex;
-  position: relative;
-  flex-flow: column;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.9);
   width: 70%;
+  height: 90%;
+  gap: 200px;
+  justify-content: space-around;
+}
+.navBar > nav > a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  width: 150px;
+  height: 30%;
+  text-align: center;
+  padding:10px;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin: auto;
 }
- 
+
+.clockBody{
+  margin: auto;
+  width: 90%;
+  height: 80%;
+}
 .clock-box {
   width: 90%;
   display: flex;
   justify-content: space-between;
   margin: auto;
+  height: 80%;
 }
-button {
-  cursor: pointer;
-  border-radius: 10px;
-  width: 90px;
-  height: 30px;
-  padding:0px 10px;
-  font-size: 16px;
-  text-align: center;
-}
+
 .box {
-  margin-top: auto;
   display: flex;
-  width: 15%;
-  height: 195px;
+  width: 14%;
+  height: 100%;
 }
 .stick {
-  margin: auto;
   width: 10%;
-  height: 7px;
+  height: 2.3%;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   position: absolute;
@@ -63,15 +80,17 @@ button {
   transform: rotate(90deg);
   margin-left: 5%;
 }
-.clock-box > span{
-  font-size: 2rem;
-  color: white;
-  width: fit-content;
-  height: fit-content;
-  margin-top: 30px;
-  margin-right: 15px;
+.colon{
+  width: 5%;
+  height: 100%;
   color: green;
-  transform: scale(3,3);
+  text-align: center;
+}
+.colon > p{
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 1.5%;
+  transform: scale(10,10);
 }
 .White {
   background-color: rgb(17, 255, 0);
@@ -83,189 +102,80 @@ button {
   background-color: rgb(255, 0, 0);
 }
 
-nav {
-  
-  display: flex;
-  justify-content: space-evenly;
-  gap: 12%;
-  scale: 1.1;
-  max-width: 80%;
-  height: auto;
-  margin: 30px;
-  /* border: 2px solid red; */
-}
-nav a{
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  letter-spacing: 3px;
-}
-.timer{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.inputTimer{
-  width: 100%;
-  margin: 20px auto;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-input{
-  width: 100px;
-}
-label{
-  margin: auto;
-}
-.sp{
-  font-size: 1rem;
-}
-.buttons{
-  width: fit-content;
-  height: fit-content;
-  margin-left: 20px;
-  display: flex;
-  justify-content: space-around;
-  gap: 50px;
-}
-#start-btn{
-  background-color: rgb(255, 255, 255);
-}
-#stop-btn{
-  background-color: rgb(255, 255, 255);
-}
-#reset-btn{
-  background-color: rgb(255, 255, 255);
-}
-.Timings{
-  width: 100%;
-  margin: auto;
-}
-button:hover{
-  scale: 1.1;
-  transition: all 0.2s;
-}
-a{
-  width: fit-content;
-  height: fit-content;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2px 10px;
-  font-size: 4vh;
-}
-
-a:hover{
-  background-color: whitesmoke;
-  color: black;
-  scale: 1.1;
-  transition: all 0.2s;
-}
-@media screen and (max-width: 720px) {
-  .stick{
-    height: 5px;
-  }
-  .clock-box > .colon{
-    margin-top: 11%;
-    transform: scale(3,3);
-  }
-  .box{
-    height: 160px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .stick{
-    height: 5px;
-  }
-  .clock-box > .colon{
-    margin-top: 8.5%;
-    transform: scale(2,2);
-  }
-  .box{
-    height: 130px;
-  }
-  a{
-    padding: 2px 8px;
-  }
-}
-@media screen and (max-width: 320px) {
-  .stick{
-    height: 5px;
-  }
-  .clock-box > .colon{
-    margin-top: 5%;
-    transform: scale(1,1);
-  }
-  .box{
-    height: 100px;
-  }
-  a{
-    padding: 1px 5px;
-  }
-}
 .classInput{
-  height: 150px;
-  color: rgb(255, 255, 255);
-  font-size: 8px;
-  padding: auto;
+  width: 80%;
+  height: 80%;
+  display: flex;
   margin: auto;
-  background-color: rgb(0, 0, 0);
-  border-radius: 10px;
+  justify-content: space-around;
 }
 .input{
-  width: fit-content;
-  height: fit-content;
-  margin: auto;
+  height: 45%;
+  margin-top: 20%;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.input > input{
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+form > input{
+  width: 50px;
+  height: 50px;
   border-radius: 5px;
-  border: none;
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  margin: 20px 2px 20px 20px;
+  font-size: 1.5rem;
 }
-input:focus{
-  outline: none;
+form > button:hover{
+  transform: scale(1.1);
+  transition: all 0.2s ease;
 }
-#input-btn{
-  border-radius: 3px;
-  font-size: 10px;
-  padding: 5px 10px;
+form > button {
+  cursor: pointer;
   width: fit-content;
   height: fit-content;
-  margin-left: 70px;
-  border: none;
+  padding: 10px 10px 10px 20px;
+  font-size: 1.3rem;
+  border-radius: 5px;
 }
-#input-btn:focus{
-  border: none;
-}
-#input-btn:hover{
-  scale: 1.1;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  transition: all 0.3s ease-in-out;
+
+.noDisplay{
+  display: none;
 }
 .display{
   display: flex;
 }
-.noDisplay{
-  display: none;
+.stopWatchDivision{
+  width: 100%;
+  height: 100%;
 }
-.inputNoDisplay{
-  display: none;
+.home{
+  height: 85%;
 }
-.inputDisplay{
-  display: block;
+.buttons{
+  margin: 20px auto auto auto;
+  height:15%;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.buttons > button{
+  width: 80px;
+  height: 50px;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.buttons > button:hover{
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+.bottomLine{
+  border-bottom: 2px solid rgb(255, 255, 255);
+  border-radius: 0px;
 }
 
-form > input{
-  width: 20px;
-  height: 20px;
-  margin: 10px;
-}
+

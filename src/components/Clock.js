@@ -6,7 +6,7 @@ const Clock = () => {
       const [time, fn] = useState(getCurrentTime);
       setInterval(()=>{fn(getCurrentTime())}, 1000);
   return (
-       <Home clockTime={time} displayColor = {'White'}/>
+      <Home clockTime={time} displayColor = {'White'}/>
   )
 }
 
