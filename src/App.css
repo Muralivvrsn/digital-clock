@@ -191,6 +191,9 @@ form > button {
   .colon > p{
     font-size: 6rem;
   }
+  .clockBody{
+    height: 50%;
+  }
 }
 @media screen and (max-width: 769px) {
   .stick {
@@ -226,6 +229,25 @@ form > button {
     gap: 100px;
     justify-content: space-around;
   }
+  .buttons {
+    margin: 0 auto auto auto;
+    height: 15%;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border: 2px solid white;
+  }
+  .clockBody{
+    height: 39%;
+    border: 2px solid white;
+  }
+  .buttons > button {
+    width: 50px;
+    height: 20px;
+    font-size: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }
 @media screen and (max-width: 481px) {
   .stick {
@@ -255,5 +277,15 @@ form > button {
     gap: 50px;
     justify-content: space-around;
   }
-  
+  .clockBody{
+    height: 30%;
+    border: 2px solid white;
+  }
+  .buttons > button {
+    width: 50px;
+    height: 20px;
+    font-size: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }
