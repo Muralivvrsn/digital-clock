@@ -219,7 +219,6 @@ form > button {
     margin: 10px auto 20px auto;
     width: 80%;
     height: 20%;
-    border: 2px solid blue;
   }
   .navBar > nav {
     margin: auto;
@@ -235,11 +234,10 @@ form > button {
     display: flex;
     width: 100%;
     justify-content: space-around;
-    border: 2px solid white;
   }
   .clockBody{
     height: 39%;
-    border: 2px solid white;
+    
   }
   .buttons > button {
     width: 50px;
@@ -279,7 +277,6 @@ form > button {
   }
   .clockBody{
     height: 30%;
-    border: 2px solid white;
   }
   .buttons > button {
     width: 50px;
