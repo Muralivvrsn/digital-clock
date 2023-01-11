@@ -6,6 +6,7 @@ const Input = (props) => {
     props.func({...Data, display:true});
     e.preventDefault();
   };
+  console.log(props)
   return (
     <div className={" classInput " + (props.display?' noDisplay':' display')}>
         <div className='input'>

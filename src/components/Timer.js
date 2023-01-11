@@ -16,7 +16,7 @@ const Timer = () => {
 
   // useEffect hooks
   useEffect(() => {
-    if (true && isDisplay) {
+    if (isDisplay) {
       localStorage.setItem(key, JSON.stringify([time, isDisplay]));
       setTimeout(() => {
         changeTime(reduceTime(time));
@@ -24,11 +24,9 @@ const Timer = () => {
     }
   }, [time, isDisplay]);
   useEffect(() => {
-    if (isDisplay) {
       const prevData = JSON.parse(localStorage.getItem(key));
       changeTime(prevData[0]);
       showDisplay(prevData[1]);
-    }
   }, [time, isDisplay]);
   return (
     <div className="TimerDivision">
