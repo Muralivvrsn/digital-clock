@@ -83,7 +83,7 @@
 .colon {
   width: 5%;
   height: 100%;
-  color: green;
+  color: rgb(255, 255, 255);
   text-align: center;
 }
 .colon > p {
@@ -92,10 +92,10 @@
   font-size: 9rem;
 }
 .White {
-  background-color: rgb(17, 255, 0);
+  background-color: rgb(255, 255, 255);
 }
 .Black {
-  background-color: rgba(2, 39, 2, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .Red {
   background-color: rgb(255, 0, 0);
@@ -177,7 +177,7 @@ form > button {
   transition: all 0.2s ease;
 }
 .bottomLine {
-  border-bottom: 2px solid rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(255, 0, 0);
   border-radius: 0px;
 }
 @media screen and (max-width: 1200px) {
