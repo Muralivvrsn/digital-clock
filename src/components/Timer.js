@@ -4,7 +4,6 @@ import { reduceTime, getTime } from "./Function";
 import Home from "./Home";
 import Input from "./Input";
 const Timer = () => {
-  const key = "TIME";
   const [time, changeTime] = useState();
   const [isDisplay, showDisplay] = useState(false);
 
@@ -17,16 +16,10 @@ const Timer = () => {
   // useEffect hooks
   useEffect(() => {
     if (isDisplay) {
-      localStorage.setItem(key, JSON.stringify([time, isDisplay]));
       setTimeout(() => {
         changeTime(reduceTime(time));
       }, 1000);
     }
-  }, [time, isDisplay]);
-  useEffect(() => {
-      const prevData = JSON.parse(localStorage.getItem(key));
-      changeTime(prevData[0]);
-      showDisplay(prevData[1]);
   }, [time, isDisplay]);
   return (
     <div className="TimerDivision">
